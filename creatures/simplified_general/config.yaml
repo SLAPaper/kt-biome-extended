@@ -1,11 +1,19 @@
 name: simplified_general
-version: "1.0"
+version: "1.1"
 
-base_config: "@kt-biome-extended/creatures/summoner"
+base_config: "@kt-biome/creatures/general"
 
-# adding back the subagents that were removed by no_inherit in the base config
-subagents:
-  - { name: explore, type: builtin }
-  - { name: plan, type: builtin }
-  - { name: worker, type: builtin }
-  - { name: critic, type: builtin }
+# Graph tools are auto-registered by the engine, so give explicit instructions.
+system_prompt: "You should NOT use `graph_*` tools to dispatch works to other creatures unless absolutely necessary. Use subagents instead."
+
+plugins:
+  - name: context_files
+    type: package
+    module: kt_biome.plugins.context_files
+    class: ContextFilesPlugin
+
+# An empty `plugins: []` would union with the base list under the
+# current merge rules, so `no_inherit` is required to actually clear it.
+no_inherit: [plugins]
+
+skill_index_budget_bytes: 16384   # 16KB

@@ -9,7 +9,7 @@ This repo intentionally does **not** fork kt-biome's files: every creature here 
 | Creature | Description |
 | --- | --- |
 | `summoner` | Graph-oriented root creature: summons and manages other creatures via the `group_*` tools. Runs with no sub-agents. |
-| `simplified_general` | A simplified general-purpose creature with essential subagents restored. |
+| `simplified_general` | A simplified general-purpose creature. Avoid using graph tools unless absolutely necessary. |
 
 ## Install
 

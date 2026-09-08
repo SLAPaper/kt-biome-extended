@@ -1,9 +1,9 @@
 name: summoner
-version: "1.0"
+version: "1.1"
 
 base_config: "@kt-biome/creatures/general"
 
-system_prompt: "You may use `graph_*` tools to organize other creatues to dispatch works."
+system_prompt: "You may use `graph_*` tools to organize other creatues to dispatch works. Use `@kt-biome-extended/creatures/simplified_general` when possible."
 
 # Graph mutation tools. The engine also auto-registers these for
 # privileged creatures at runtime; listing them here keeps the surface
