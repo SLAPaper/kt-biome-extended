@@ -1,0 +1,13 @@
+name: kt-biome-extended
+version: "1.0.0"
+description: "Personal creatures and extensions on top of kt-biome for KohakuTerrarium"
+author: "SLAPaper"
+repository: "https://github.com/SLAPaper/kt-biome-extended"
+
+creatures:
+  - name: summoner
+    path: creatures/summoner
+    description: "Graph-oriented root creature: summons and manages other creatures via the `group_*` tools. Runs with no sub-agents."
+  - name: simplified_general
+    path: creatures/simplified_general
+    description: "A simplified general-purpose creature with essential subagents restored."

@@ -1,0 +1,11 @@
+name: simplified_general
+version: "1.0"
+
+base_config: "@kt-biome-extended/creatures/summoner"
+
+# adding back the subagents that were removed by no_inherit in the base config
+subagents:
+  - { name: explore, type: builtin }
+  - { name: plan, type: builtin }
+  - { name: worker, type: builtin }
+  - { name: critic, type: builtin }

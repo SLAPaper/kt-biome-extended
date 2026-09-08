@@ -1,0 +1,47 @@
+name: summoner
+version: "1.0"
+
+base_config: "@kt-biome/creatures/general"
+
+system_prompt: "You may use `graph_*` tools to organize other creatues to dispatch works."
+
+# Graph mutation tools. The engine also auto-registers these for
+# privileged creatures at runtime; listing them here keeps the surface
+# explicit and the duplicate registration is skipped harmlessly.
+tools:
+  - name: group_add_node
+    type: builtin
+  - name: group_channel
+    type: builtin
+  - name: group_kill_node
+    type: builtin
+  - name: group_pause_node
+    type: builtin
+  - name: group_remove_node
+    type: builtin
+  - name: group_resume_node
+    type: builtin
+  - name: group_send
+    type: builtin
+  - name: group_spawn_child
+    type: builtin
+  - name: group_start_node
+    type: builtin
+  - name: group_status
+    type: builtin
+  - name: group_stop_node
+    type: builtin
+  - name: group_wire
+    type: builtin
+
+plugins:
+  - name: context_files
+    type: package
+    module: kt_biome.plugins.context_files
+    class: ContextFilesPlugin
+
+# An empty `subagents: []` would union with the base list under the
+# current merge rules, so `no_inherit` is required to actually clear it.
+no_inherit: [subagents, plugins]
+
+skill_index_budget_bytes: 16384   # 16KB
