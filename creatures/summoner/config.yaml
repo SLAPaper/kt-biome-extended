@@ -1,9 +1,9 @@
 name: summoner
-version: "1.1"
+version: "1.2"
 
 base_config: "@kt-biome/creatures/general"
 
-system_prompt: "You may use `graph_*` tools to organize other creatues to dispatch works. Use `@kt-biome-extended/creatures/simplified_general` when possible."
+system_prompt: "You may use `graph_*` tools to organize other creatues to dispatch works when necessary."
 
 # Graph mutation tools. The engine also auto-registers these for
 # privileged creatures at runtime; listing them here keeps the surface
@@ -42,6 +42,6 @@ plugins:
 
 # An empty `subagents: []` would union with the base list under the
 # current merge rules, so `no_inherit` is required to actually clear it.
-no_inherit: [subagents, plugins]
+no_inherit: [plugins]
 
 skill_index_budget_bytes: 16384   # 16KB
